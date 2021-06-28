@@ -2,6 +2,7 @@
 .idea/
 .linaria-cache/
 
+.next
 dist/
 /lib
 node_modules/
