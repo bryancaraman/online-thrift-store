@@ -11,7 +11,6 @@ Slack: `#bootcamp2021`
 ## Setup - Terrance
 
 - Install Gasket [ https://github.com/godaddy/gasket](https://github.com/godaddy/gasket/blob/master/docs/quick-start.md)
-- 
 - Commit initial code to a directory under `Teams` with your team name.
 
 
@@ -30,6 +29,7 @@ components/head, html doc setup
 ## Material UI - Terrance
 // intro to material ui 
 // import / export / named imports
+- npm install @material-ui/core
 
 ## Pages - Jacob
 
