@@ -49,6 +49,7 @@ Alright, enough talk, let's look at some code. After creating a new Gasket app w
 We'll talk more about pages and components in a moment, but I want to make a couple of brief notes on these:
 - `head.js` is a simple React component that encapsulates what we'd put in the `<head>` element on every page. This is a great example of how web frameworks are a big boost over writing out pages by hand - we can just re-use that component everywhere and inject the variable values that we need!
 - In Nextjs, files in the `pages/` directory map to route names, with `index.js` being a special case that routes to `/`. Visit `http://localhost:8080` to view the page, and edit the text and save the file to see it reload in real time!
+- If you want global css styles, import them into [`_app.js`](./pages/_app.js).
 
 One last thing to remember - it's ok to not understand everything that's going on in these generated files! One of the most important skills to learn as a web developer is the ability to accept some "magic" and focus your attention where it really matters. There will always be time to learn about features in-depth later when you need to use them.
 
@@ -57,10 +58,52 @@ One last thing to remember - it's ok to not understand everything that's going o
 // import / export / named imports
 - npm install @material-ui/core
 
-## Pages - Jacob
+## Pages
+You may remember having to map URL routes to code handlers when writing your APIs in the Falcon framework with code like this:
+```python
+api.add_route('/v1/products', Products())
+api.add_route('/v1/products/{product_id:int}', Product())
+```
 
-shop - start with functional component skeleton, maybe Container
-cart - have them create this one
+For UI pages in Next.js, the framework is even more opinionated: each file in the `pages/` that exports a React component automatically gets its own route. We discussed the special case of `pages/index.js` already, which is mapped to the root route `/`. New files will get pages that correspond to their name, and you can create folder structures to nest pages. For example:
+- `pages/about.js` will map to `/about`
+- `/pages/blog/posts.js` will map to `/blog/posts`
+- `/pages/blog/posts/[id].js` will create a dynamic route for `/blog/posts/{id}`. We won't be discussing dynamic Next.js routing today, but you can check out the docs for more information: https://nextjs.org/docs/routing/dynamic-routes
+
+Remember the products API you created? Let's create a page to browse products at the `/shop` route. We don't have any components to include yet, so for now we'll just add a title (`"My shop"`) and a link to another page, the cart page. The Next.js [Link component](https://nextjs.org/learn/basics/navigate-between-pages/link-component) works a lot like an `<a>` tag, but with some framework magic sprinkled in.
+
+Here's the full page code that you should add to `pages/shop.js`:
+
+```javascript
+/* eslint-disable no-unused-vars */
+import React from 'react';
+import Head from '../components/head';
+import Link from 'next/link';
+
+import { Container, Typography } from '@material-ui/core'
+
+export const ShopPage = () => (
+  <Container>
+    <Head title='Home'/>
+    <div>
+      <Typography variant="h3">My Shop</Typography>   
+    </div>
+    <div>
+      <Link href="/cart">
+        <a>View cart</a>
+      </Link>
+    </div>
+  </Container>
+);
+
+export default ShopPage;
+```
+
+Check it out at `http://localhost:8080/shop`. You'll notice that clicking on the "View cart" link leads to an error page - let's fix that! Create a `cart.js` page similar to this one with a different title and a link back to the shop page.
+
+Further reading:
+- Next.js pages tutorial: https://nextjs.org/learn/basics/navigate-between-pages/pages-in-nextjs
+- Next.js pages docs: https://nextjs.org/docs/basic-features/pages
 
 ## Components - Terrance
 
