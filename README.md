@@ -75,7 +75,6 @@ Remember the products API you created? Let's create a page to browse products at
 Here's the full page code that you should add to `pages/shop.js`:
 
 ```javascript
-/* eslint-disable no-unused-vars */
 import React from 'react';
 import Head from '../components/head';
 import Link from 'next/link';
@@ -120,6 +119,57 @@ ShoppingList
 ShoppingItem
 
 ## Tips - Jacob
+
+### Async/await
+Managing asynchronous code can be tricky to wrap your head around, but once you master it you will unlock tons of the cool stuff that client-side javascript can do.
+
+First: what does async/asynchronous mean? Well, it's actually a negation of "synchronous" ("a-synchronous" == "not synchronous") so let's start there: Synchronous means that your code instructions are fully executed in the order that you write them. This is probably how you've written most programs! Something like:
+
+```js
+function square(n) {
+  return n * n;
+}
+
+const x = 5;
+const result = square(x);
+console.log(result)
+// 25
+```
+
+Each line will be executed in full and in order. First `x` is assigned to 5, then the function `square` is called with `x` as a parameter, `square` finishes and the result is stored in the `result` variable, and finally we print `result` to the console.
+
+Asynchronous code (or async for short) lets you start running some code, continue doing other useful work, and come back and do something when that bit of code you started completes. Why would you want to do this? The most common case is that you want to do something that involves a lot of waiting around, like making an HTTP request to some API. These requests can take seconds, an eternity of waiting for a computer. Async code style lets you just define what you want to do when the operation completes, and the execution envioronment handles all the details of invoking the your handling code when the background portion is done.
+
+In javascript, how you write async code has evolved over the years so you may see some different styles. One way to do it is to make use of the `async` and `await` keywords. When defining a function, you can specify that it is an async function by adding `async` to the declaration:
+
+```js
+async function square(n) {
+  // I need to think for a while...
+  sleep(1)
+  // got it!
+  return n * n;
+}
+```
+
+This tells the javascript interpreter that the function is async and restricts how you can use it. Most importantly, it changes what the function returns! If you try to call `square` directly, it no longer returns a number:
+
+```js
+let result = square(5);
+console.log(result)
+// Promise { <state>: "fulfilled", <value>: 25 }
+```
+
+Instead of `25` we got a `Promise` object with some properties. We won't go too deeply into the details of what a `Promise` is here, but here are the key things to know:
+- Promises are wrappers around some result value, which could be anything - a number, a string, an object.
+- Promises have internal state managed by the javascript engine, and you can hook functions into these lifecycle changes - for example, when it is fulfilled.
+
+The easiest way to obtain the result of an `Promise` (and by extention, `async` functions), is to use the `await` keyword.
+
+### Fetch
+
+### State
+
+## Links
 
 // examples of fetch, useState, async await, etc
 
