@@ -5,7 +5,7 @@ import Head from '../components/head';
 import Cart from '../components/Cart'
 import { Container, Typography } from '@material-ui/core'
 
-export const IndexPage = () => (
+export const CartPage = () => (
   <Container>
     <Head title='Cart'/>
     <div>
@@ -22,4 +22,4 @@ export const IndexPage = () => (
   </Container>
 );
 
-export default IndexPage;
+export default CartPage;
