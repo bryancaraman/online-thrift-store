@@ -195,7 +195,7 @@ function ShoppingItemList() {
 
   const handleAddToCart = async (product) => {
     /* add product to cart via api */
-    /* redirect to the cart page
+    /* redirect to the cart page */
   }
 
   return (
@@ -204,6 +204,7 @@ function ShoppingItemList() {
        /* How should you iterate over the list of products?  */
        /* Hint: map() function for Arrays */
     </Grid>
+  )
 ```
 
 
