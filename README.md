@@ -165,6 +165,7 @@ function ShopItem({ /* insert props here */}) {
     </CardContent>
       <CardActions>
         /* Insert AddToCart Button here */
+        /* What should happen when you click the button? */
       </CardActions>
     </Card>
   );
@@ -173,7 +174,41 @@ function ShopItem({ /* insert props here */}) {
 export default ShoppingCard;
 ```
 
-Now that we got you started, the rest is up to you! Reach out to a bootcamp trainer or take a peek at a working solution [here](https://github.secureserver.net/txwilliams/bootcamp-shopping-cart/tree/full-solution).
+
+Now that we got you started, the rest is up to you! Your next step should be creating ShopItemList component. 
+
+
+```js
+import React, { useState, useEffect } from 'react';
+import { Grid } from '@material-ui/core'
+import { useRouter } from 'next/router'
+
+function ShoppingGrid() {
+
+  // this is the state we will use to hold the response from the api
+  const [products, setProducts] = useState([]);
+  const router = useRouter()
+
+  useEffect(async () => {
+    /* fetch list of products here */
+    /* update product state with response */
+  }, [])
+
+  const handleAddToCart = async (product) => {
+    /* add product to cart via api */
+    /* redirect to the cart page
+  }
+
+  return (
+    <Grid container direction="row" spacing={1}>
+       /* Add your ShoppingItem components here! */
+       /* How should you iterate over the list of products?  */
+       /* Hint: map() function for Arrays */
+    </Grid>
+```
+
+
+Reach out to a bootcamp trainer or take a peek at a working solution [here](https://github.secureserver.net/txwilliams/bootcamp-shopping-cart/tree/full-solution).
 
 ## Tips
 ### Async/await
