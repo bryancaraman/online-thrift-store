@@ -14,7 +14,7 @@ To get started, clone this repo locally:
 git clone https://github.secureserver.net/txwilliams/bootcamp-shopping-cart.git
 ```
 
-Then, let's make sure we have the BootCamp-API you worked on previously [running locally](https://github.secureserver.net/thoag/2021Bootcamp-API).
+Then, let's make sure we have the BootCamp-API you worked on previously [running locally](https://github.secureserver.net/thoag/2021Bootcamp-API#run-locally).
 
 ## Getting Started
 
