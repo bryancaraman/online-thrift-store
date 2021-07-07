@@ -151,7 +151,7 @@ Let's walk through an example and create a skeleton for `ShopItem.js` in the `/c
 import React from 'react';
 import { Card, CardContent, CardActions } from '@material-ui/core'
 
-function ShopItem({ product_id, name, description, image_url, price, is_on_sale, sale_price, onAddToCart }) {
+function ShopItem({ /* insert props here */}) {
   
   const addToCart = () => {
      /* Insert logic here  */
