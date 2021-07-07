@@ -2,6 +2,9 @@
 
 Slack: `#bootcamp2021` 
 
+![](images/store.png)
+![](images/cart.png)
+
 ## Preqrequities
 
 - NodeJS v14 (or higher)
