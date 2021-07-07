@@ -1,22 +1,24 @@
 # bootcamp-shopping-cart
 
-A basic gasket app
-
-## Quickstart
-
-## References
-
 Slack: `#bootcamp2021` 
 
-## Setup - Terrance
+## Preqrequities
 
-- Install Gasket [ https://github.com/godaddy/gasket](https://github.com/godaddy/gasket/blob/master/docs/quick-start.md)
-- Commit initial code to a directory under `Teams` with your team name.
+- NodeJS v14 (or higher)
+- Visual Studio Code
+- Git
 
+To get started, clone this repo locally:
 
-## Gasket / Next.js
+```bash
+git clone https://github.secureserver.net/txwilliams/bootcamp-shopping-cart.git
+```
 
-How do you build a web application? At the very simplest level, a webapp responds to a request from a client with some data. If you want the content to be viewable in a web browser, it will probably be some combination of HTML/CSS/Javascript files. One way to do this is to simply write HTML, put it on a server, and configure that server to return that file - simple! As you begin to build bigger websites with more complex functionality, though, you will likely find that the simple approach is limiting - that's where frameworks like Gasket and NextJS come in!
+Then, let's make sure we have the BootCamp-API you worked on previously [running locally](https://github.secureserver.net/thoag/2021Bootcamp-API).
+
+## Getting Started
+
+So how do you build a web application? At the very simplest level, a webapp responds to a request from a client with some data. If you want the content to be viewable in a web browser, it will probably be some combination of HTML/CSS/Javascript files. One way to do this is to simply write HTML, put it on a server, and configure that server to return that file - simple! As you begin to build bigger websites with more complex functionality, though, you will likely find that the simple approach is limiting - that's where frameworks like Gasket and NextJS come in!
 
 ### What is a framework?
 Web frameworks are collections of code that automate and provide common solutions to many problems that you will need to solve to build a web application. Their features typically include but are certainly not limited to:
@@ -37,6 +39,13 @@ Web frameworks are collections of code that automate and provide common solution
 
 Created and open-sourced at GoDaddy, Gasket lets us create standard templates for and bundle features for different types of applications. Want to build an API? There's a Gasket preset for that, with support for GoDaddy authentication and API standards already built in. Building a full-stack app? There's a preset for that, with all of our standard UX goodness built in.
 
+To use Gasket, we would normally to install it into our project via NPM (Node Package Manager) via [these instructions](https://github.com/godaddy/gasket/blob/master/docs/quick-start.md). However, this repo already comes with gasket installed so no need to worry!
+
+And speaking of libraries, let's install one called [Material UI](https://material-ui.com/). This is a Google-inspired opensource library that contains some basic react components we'll use to make our web app pretty. We'll go more in-depth into Material UI a little later on. For now though, let's just run this command:
+```
+npm install @material-ui/core
+```
+
 ### Framework skeleton
 Alright, enough talk, let's look at some code. After creating a new Gasket app with the Next.js preset, we get a few key things:
 - Some config files that we'll ignore for now (`gasket.config.js`, `package.json`, `jest.config.js`)
@@ -52,11 +61,6 @@ We'll talk more about pages and components in a moment, but I want to make a cou
 - If you want global css styles, import them into [`_app.js`](./pages/_app.js).
 
 One last thing to remember - it's ok to not understand everything that's going on in these generated files! One of the most important skills to learn as a web developer is the ability to accept some "magic" and focus your attention where it really matters. There will always be time to learn about features in-depth later when you need to use them.
-
-## Material UI - Terrance
-// intro to material ui 
-// import / export / named imports
-- npm install @material-ui/core
 
 ## Pages
 You may remember having to map URL routes to code handlers when writing your APIs in the Falcon framework with code like this:
@@ -104,22 +108,74 @@ Further reading:
 - Next.js pages tutorial: https://nextjs.org/learn/basics/navigate-between-pages/pages-in-nextjs
 - Next.js pages docs: https://nextjs.org/docs/basic-features/pages
 
-## Components - Terrance
+## Material UI
 
-//small intro to react components, props, propTypes, etc
+Ok, now that we have the basic pages setup lets circle back to back to Material UI. You might have noticed a few lines of code in ShopPage that [import](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import) the "Container" and "Typography" components from Material UI
 
-// Suggest list of starter components,
-ShoppingList
-ShoppingItem
-CartList
-CartItem
+```js
+// This is called a named import
+import { Container, Typography } from '@material-ui/core'
+```
 
-// Walk through creating
-ShoppingList
-ShoppingItem
+Both `Container` and `Typography` are examples of reusable eact components that the gracious and mysterious and opensource community have built. In react, reusability is core tenet and the main way we will encapsulate reusable frontend logic and HTML is via components. In fact, when building a large scale web-app, one of the first things you will need to identify is what components you will need to build, and which components you can reuse. 
 
-## Tips - Jacob
 
+![](https://hermesespinola.files.wordpress.com/2016/11/code-reuse.jpg?w=842)
+
+Here's a couple candidates for re-use (via Material UI), but feel free to explore the docs to see the full list of generic components are available
+
+Card
+- https://material-ui.com/components/cards/
+- https://material-ui.com/api/card/
+
+Typography
+- https://material-ui.com/components/typography/
+- https://material-ui.com/api/typography/
+
+Button
+- https://material-ui.com/components/button/
+- https://material-ui.com/api/button/
+
+## Components
+
+However, no web-app is able to rely purely on generic components. We'll also need to build some custom components specific to our use case. Since we're modeling a shopping cart, you could imagine the we need the following components:
+
+1. ShopItem
+2. ShopItemList
+3. CartItem
+4. CartItemList
+
+Let's walk through an example and create a skeleton for `ShopItem.js` in the `/components` folder.
+
+```js
+import React from 'react';
+import { Card, CardContent, CardActions } from '@material-ui/core'
+
+function ShopItem({ /* insert props here */}) {
+  
+  const addToCart = () => {
+     /* Insert logic here  */
+  }
+
+  return (
+    <Card style={{height: "400px"}}>
+      /* Insert Image Here */
+    <CardContent>
+      /* Insert Name, Description, Price Here */
+    </CardContent>
+      <CardActions>
+        /* Insert AddToCart Button here */
+      </CardActions>
+    </Card>
+  );
+}
+
+export default ShoppingCard;
+```
+
+Now that we got you started, the rest is up to you! Reach out to a bootcamp trainer or take a peek at a working solution [here](https://github.secureserver.net/txwilliams/bootcamp-shopping-cart/tree/full-solution).
+
+## Tips
 ### Async/await
 Managing asynchronous code can be tricky to wrap your head around, but once you master it you will unlock tons of the cool stuff that client-side javascript can do.
 
@@ -177,7 +233,6 @@ Gasket: https://github.com/godaddy/gasket
 - Gasket Plugins:  https://gasket.dev/#/README
 
 Confluence: https://confluence.godaddy.com/display/URBC/2020+Bootcamp+Home+Page
-
 
 
 Training URLS: 
