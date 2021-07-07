@@ -143,7 +143,7 @@ However, no web-app is able to rely purely on generic components. We'll also nee
 1. ShopItem
 2. ShopItemList
 3. CartItem
-4. CartItemList
+4. Cart
 
 Let's walk through an example and create a skeleton for `ShopItem.js` in the `/components` folder.
 
@@ -174,8 +174,7 @@ function ShopItem({ /* insert props here */}) {
 export default ShoppingCard;
 ```
 
-
-Now that we got you started, the rest is up to you! Your next step should be creating ShopItemList component. 
+Now that we've got a ShopItem, we need to retrieve the list of products from your api and render the full list using your newly built component. To do this, let's create a `ShopItemList.js` in the `/components` folder. This component will reference `ShopItem`.
 
 
 ```js
@@ -183,7 +182,7 @@ import React, { useState, useEffect } from 'react';
 import { Grid } from '@material-ui/core'
 import { useRouter } from 'next/router'
 
-function ShoppingGrid() {
+function ShoppingItemList() {
 
   // this is the state we will use to hold the response from the api
   const [products, setProducts] = useState([]);
@@ -208,7 +207,7 @@ function ShoppingGrid() {
 ```
 
 
-Reach out to a bootcamp trainer or take a peek at a working solution [here](https://github.secureserver.net/txwilliams/bootcamp-shopping-cart/tree/full-solution).
+Now that we got you started, the rest is up to you! Your next steps should be finishing up the CartItem and Cart components. Reach out to a bootcamp trainer or take a peek at a working solution [here](https://github.secureserver.net/txwilliams/bootcamp-shopping-cart/tree/full-solution).
 
 ## Tips
 ### Async/await
