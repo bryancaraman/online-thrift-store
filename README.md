@@ -117,7 +117,7 @@ Ok, now that we have the basic pages setup lets circle back to back to Material 
 import { Container, Typography } from '@material-ui/core'
 ```
 
-Both `Container` and `Typography` are examples of reusable eact components that the gracious and mysterious and opensource community have built. In react, reusability is core tenet and the main way we will encapsulate reusable frontend logic and HTML is via components. In fact, when building a large scale web-app, one of the first things you will need to identify is what components you will need to build, and which components you can reuse. 
+Both `Container` and `Typography` are examples of reusable react components that the gracious and mysterious and opensource community have built. In react, reusability is core tenet and the main way we will encapsulate reusable frontend logic and HTML is via components. In fact, when building a large scale web-app, one of the first things you will need to identify is what components you will need to build, and which components you can reuse. 
 
 
 ![](https://hermesespinola.files.wordpress.com/2016/11/code-reuse.jpg?w=842)
