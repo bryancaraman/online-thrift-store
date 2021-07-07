@@ -205,6 +205,7 @@ function ShoppingItemList() {
        /* Hint: map() function for Arrays */
     </Grid>
   )
+}
 ```
 
 
