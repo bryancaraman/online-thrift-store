@@ -238,9 +238,8 @@ Asynchronous code (or async for short) lets you start running some code, continu
 In javascript, how you write async code has evolved over the years so you may see some different styles. One way to do it is to make use of the `async` and `await` keywords. When defining a function, you can specify that it is an async function by adding `async` to the declaration:
 
 ```js
-async function square(n) {
+async function async_square(n) {
   // I need to think for a while...
-  sleep(1)
   // got it!
   return n * n;
 }
@@ -249,7 +248,7 @@ async function square(n) {
 This tells the javascript interpreter that the function is async and restricts how you can use it. Most importantly, it changes what the function returns! If you try to call `square` directly, it no longer returns a number:
 
 ```js
-let result = square(5);
+let result = async_square(5);
 console.log(result)
 // Promise { <state>: "fulfilled", <value>: 25 }
 ```
@@ -258,21 +257,103 @@ Instead of `25` we got a `Promise` object with some properties. We won't go too 
 - Promises are wrappers around some result value, which could be anything - a number, a string, an object.
 - Promises have internal state managed by the javascript engine, and you can hook functions into these lifecycle changes - for example, when it is fulfilled.
 
-The easiest way to obtain the result of an `Promise` (and by extention, `async` functions), is to use the `await` keyword.
+The easiest way to obtain the result of an `Promise` (and by extention, `async` functions), is to use the `await` keyword:
+
+```js
+let result = await async_square(5);
+console.log(result)
+// 5
+```
+
+This is some syntactic sugar that automatically handles the promise resolution and assigns the value to your `result` variable. How would you do this manually? We have to get a bit deeper into the weeds of Promises for that.
+
+### Promises
+We saw that `async` functions return `Promise` objects. A `Promise` is, well, a promise that something will be computed asynchronously and eventually returned back to the caller through a callback method. To specify these callback methods, we use the `Promise.then` function ([docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/then#syntax)). Let's re-write our async square function above with raw promises instead of async/await:
+
+```js
+function async_square(n) {
+  return new Promise((resolve, reject) => {
+    resolve(n * n);
+  });
+}
+
+let result = async_square(5);
+console.log(result);
+// Promise { <state>: "fulfilled", <value>: 25 }
+result.then(value => {
+  console.log(value);
+  // 5
+})
+```
+
+Cool! You may notice that when creating the promise, we actually passed in a function definition that took 2 arguements: `resolve` and `reject`. These are how we invoke different callback methods for either success or failure. It's common that something can go wrong with an async operation like an HTTP request, so we need to support error handling with the `reject` method. If all goes well, we call `resolve` with the outcome. If not, we call `reject` with details on what went wrong. To handle rejections, we can pass a second callback method into the `.then` function. Here's a full example, with explicitly defined handler functions instead of arrow functions:
+
+```js
+function async_square(n) {
+  return new Promise((resolve, reject) => {
+    if (n <= 12) {
+      resolve(n*n);
+    } else {
+      reject(`I'm still working on my times tables, ${n} is too large! Try a smaller number`);
+    }
+  });
+}
+
+function handle_fulfilled(result) {
+  console.log(`Fulfilled with result: ${result}`);
+}
+
+function handle_rejected(reason) {
+  console.log(`Oh no! Promise rejected for reason: ${reason})`);
+}
+
+async_square(5).then(handle_fulfilled, handle_rejected);
+// Fulfilled with result: 25
+
+async_square(15).then(handle_fulfilled, handle_rejected);
+// Oh no! Promise rejected for reason: I'm still working on my times tables, 15 is too large! Try a smaller number
+```
 
 ### Fetch
+The most common async code you'll write is when making HTTP requests. The way you do that is through the fetch API ([docs](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch)). At it's simplest, you can make a GET request and parse json like so:
 
-### State
+```js
+fetch('http://example.com/movies.json')
+  .then(response => response.json())
+  .then(data => console.log(data));
+```
+
+Ooh, two `.then` calls! Did I mention that you can chain promises? Let's walk through what's happening here:
+
+1. `fetch(url)` takes in a URL and returns a promise that resolves with a [response](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch#response_objects) object on success.
+2. We add a handler that takes that response object and calls the [`.json()`](https://developer.mozilla.org/en-US/docs/Web/API/Request/json) method which _also_ returns a promise. This parses the body JSON and resolves the promise with an object representing the JSON.
+3. We add another handler to that promise, which takes the `data` result and logs it to the console.
+
+Cool! Notoriously missing here is error handling - I won't get into that, but you can check out the [docs](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch#checking_that_the_fetch_was_successful) for some examples.
+
+To POST data to an API, we need to make use of the 2nd parameter to the `fetch` function, the request options:
+
+```js
+
+const postData = { answer: 42 };
+const options = {
+  method: 'POST',
+  headers: {
+      'Content-Type': 'application/json'
+  },
+  body: JSON.stringify(data)
+}
+const result = await fetch('https://example.com/answer', options).then(response => response.json());
+```
+
+Now go forth and fetch!
 
 ## Links
-
-// examples of fetch, useState, async await, etc
 
 Gasket: https://github.com/godaddy/gasket
 - Gasket Plugins:  https://gasket.dev/#/README
 
 Confluence: https://confluence.godaddy.com/display/URBC/2020+Bootcamp+Home+Page
-
 
 Training URLS: 
 - Pluralsight
