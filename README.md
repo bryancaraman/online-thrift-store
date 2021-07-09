@@ -19,6 +19,16 @@ git clone https://github.secureserver.net/{your-user-id}/bootcamp-shopping-cart.
 
 Then, let's make sure we have the BootCamp-API you worked on previously [running locally](https://github.secureserver.net/thoag/2021Bootcamp-API#run-locally).
 
+Start the app with:
+
+```
+gasket local
+```
+
+Visit the index at:
+
+http://localhost:8080/
+
 ## Getting Started
 
 So how do you build a web application? At the very simplest level, a webapp responds to a request from a client with some data. If you want the content to be viewable in a web browser, it will probably be some combination of HTML/CSS/Javascript files. One way to do this is to simply write HTML, put it on a server, and configure that server to return that file - simple! As you begin to build bigger websites with more complex functionality, though, you will likely find that the simple approach is limiting - that's where frameworks like Gasket and NextJS come in!
