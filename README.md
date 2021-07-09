@@ -19,10 +19,16 @@ git clone https://github.secureserver.net/{your-user-id}/bootcamp-shopping-cart.
 
 Then, let's make sure we have the BootCamp-API you worked on previously [running locally](https://github.secureserver.net/thoag/2021Bootcamp-API#run-locally).
 
+Install with:
+
+```
+npm install
+```
+
 Start the app with:
 
 ```
-gasket local
+npm run local
 ```
 
 Visit the index at:
