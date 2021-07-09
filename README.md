@@ -11,10 +11,10 @@ Slack: `#bootcamp2021`
 - Visual Studio Code
 - Git
 
-To get started, clone this repo locally:
+To get started, fork this repo and then clone your copy locally:
 
 ```bash
-git clone https://github.secureserver.net/txwilliams/bootcamp-shopping-cart.git
+git clone https://github.secureserver.net/{your-user-id}/bootcamp-shopping-cart.git
 ```
 
 Then, let's make sure we have the BootCamp-API you worked on previously [running locally](https://github.secureserver.net/thoag/2021Bootcamp-API#run-locally).
