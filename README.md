@@ -152,8 +152,8 @@ Typography
 - https://material-ui.com/api/typography/
 
 Button
-- https://material-ui.com/components/button/
-- https://material-ui.com/api/button/
+- https://material-ui.com/components/buttons/
+- https://material-ui.com/api/buttons/
 
 ## Components
 
