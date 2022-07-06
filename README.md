@@ -1,7 +1,5 @@
 # bootcamp-shopping-cart
 
-Slack: `#bootcamp2021` 
-
 ![](images/store.png)
 ![](images/cart.png)
 
