@@ -188,7 +188,7 @@ function ShopItem({ /* insert props here */}) {
   );
 }
 
-export default ShoppingCard;
+export default ShopItem;
 ```
 
 Now that we've got a ShopItem, we need to retrieve the list of products from your api and render the full list using your newly built component. To do this, let's create a `ShopItemList.js` in the `/components` folder. This component will reference `ShopItem`.
