@@ -115,9 +115,7 @@ export const ShopPage = () => (
       <Typography variant="h3">My Shop</Typography>   
     </div>
     <div>
-      <Link href="/cart">
-        <a>View cart</a>
-      </Link>
+      <Link href="/cart">View cart</Link>
     </div>
   </Container>
 );
