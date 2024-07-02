@@ -11,12 +11,12 @@
 
 To get started, fork this repo
 ```
-https://github.com/txwilliams-godaddy/BootCampCart-UI
+https://github.com/txwilliams-godaddy/bootcamp-shopping-cart
 ```
 
 Then, and then clone your copy locally:
 ```bash
-git clone https://github.com/txwilliams-godaddy/BootCampCart-UI.git
+git clone https://github.com/txwilliams-godaddy/bootcamp-shopping-cart.git
 cd BootCampCart-UI
 code . #this opens up the visual studio code with the project as your working directory
 ```
@@ -66,7 +66,7 @@ To use Gasket, we would normally to install it into our project via NPM (Node Pa
 
 And speaking of libraries, let's install one called [Material UI](https://material-ui.com/). This is a Google-inspired opensource library that contains some basic react components we'll use to make our web app pretty. We'll go more in-depth into Material UI a little later on. For now though, let's just run this command:
 ```
-npm install @material-ui/core
+npm install @mui/material
 ```
 
 ### Framework skeleton
@@ -106,7 +106,7 @@ import React from 'react';
 import Head from '../components/head';
 import Link from 'next/link';
 
-import { Container, Typography } from '@material-ui/core'
+import { Container, Typography } from '@mui/material'
 
 export const ShopPage = () => (
   <Container>
@@ -135,7 +135,7 @@ Ok, now that we have the basic pages setup lets circle back to back to Material 
 
 ```js
 // This is called a named import
-import { Container, Typography } from '@material-ui/core'
+import { Container, Typography } from '@mui/material'
 ```
 
 Both `Container` and `Typography` are examples of reusable react components that the gracious and mysterious and opensource community have built. In react, reusability is core tenet and the main way we will encapsulate reusable frontend logic and HTML is via components. In fact, when building a large scale web-app, one of the first things you will need to identify is what components you will need to build, and which components you can reuse. 
@@ -170,7 +170,7 @@ Let's walk through an example and create a skeleton for `ShopItem.js` in the `/c
 
 ```js
 import React from 'react';
-import { Card, CardContent, CardActions } from '@material-ui/core'
+import { Card, CardContent, CardActions } from '@mui/material'
 
 function ShopItem({ /* insert props here */}) {
   
@@ -200,7 +200,7 @@ Now that we've got a ShopItem, we need to retrieve the list of products from you
 
 ```js
 import React, { useState, useEffect } from 'react';
-import { Grid } from '@material-ui/core'
+import { Grid } from '@mui/material'
 import { useRouter } from 'next/router'
 
 function ShoppingItemList() {
@@ -230,7 +230,7 @@ function ShoppingItemList() {
 ```
 
 
-Now that we got you started, the rest is up to you! Your next steps should be finishing up the CartItem and Cart components. Reach out to a bootcamp trainer or take a peek at a working solution [here](https://github.secureserver.net/txwilliams/bootcamp-shopping-cart/tree/full-solution).
+Now that we got you started, the rest is up to you! Your next steps should be finishing up the CartItem and Cart components. Reach out to a bootcamp trainer or take a peek at a working solution [here](https://github.secureserver.net/txwilliams/bootcamp-shopping-cart/tree/solution).
 
 ## Tips
 ### Async/await

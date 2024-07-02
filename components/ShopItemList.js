@@ -10,12 +10,9 @@ function ShopItemList() {
   const router = useRouter()
 
   useEffect(async () => {
-    //const response = await fetch(getProductsUrl, { method: 'GET'});
-   // const json = await response.json();
-    setProducts([
-      { id: 1, name: 'test', description: 'test', image_url: 'test', price: 1, is_on_sale: false, sale_price: 1},
-      { id: 1, name: 'test', description: 'test', image_url: 'test', price: 1, is_on_sale: false, sale_price: 1}
-    ])
+    const response = await fetch(getProductsUrl, { method: 'GET'});
+    const json = await response.json();
+    setProducts(json)
   }, [])
 
   const handleAddToCart = async (product) => {
