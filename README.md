@@ -58,8 +58,6 @@ Web frameworks are collections of code that automate and provide common solution
 
 [Gasket](https://gasket.dev/#/) takes frameworks to another level: it's a framework for frameworks!
 
-![](https://i.imgflip.com/5fj4oj.jpg)
-
 Created and open-sourced at GoDaddy, Gasket lets us create standard templates for and bundle features for different types of applications. Want to build an API? There's a Gasket preset for that, with support for GoDaddy authentication and API standards already built in. Building a full-stack app? There's a preset for that, with all of our standard UX goodness built in.
 
 To use Gasket, we would normally to install it into our project via NPM (Node Package Manager) via [these instructions](https://github.com/godaddy/gasket/blob/master/docs/quick-start.md). However, this repo already comes with gasket installed so no need to worry!
@@ -139,9 +137,6 @@ import { Container, Typography } from '@mui/material'
 ```
 
 Both `Container` and `Typography` are examples of reusable react components that the gracious and mysterious and opensource community have built. In react, reusability is core tenet and the main way we will encapsulate reusable frontend logic and HTML is via components. In fact, when building a large scale web-app, one of the first things you will need to identify is what components you will need to build, and which components you can reuse. 
-
-
-![](https://hermesespinola.files.wordpress.com/2016/11/code-reuse.jpg?w=842)
 
 Here's a couple candidates for re-use (via Material UI), but feel free to explore the docs to see the full list of generic components are available
 
