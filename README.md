@@ -17,7 +17,7 @@ https://github.com/txwilliams-godaddy/bootcamp-shopping-cart
 Then, and then clone your copy locally:
 ```bash
 git clone https://github.com/txwilliams-godaddy/bootcamp-shopping-cart.git
-cd BootCampCart-UI
+cd bootcamp-shopping-cart
 code . #this opens up the visual studio code with the project as your working directory
 ```
 
