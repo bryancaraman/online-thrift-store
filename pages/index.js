@@ -5,16 +5,9 @@ import { DocumentHeadTags, documentGetIniitialProps }from '@mui/material-nextjs/
 
 export const IndexPage = (props) => (
   <div>
-    <Head title='Home'>
-      <DocumentHeadTags {...props} />
-    </Head>
+    <Head title='Home'/>
     <h1>Welcome!</h1>
   </div>
 );
-
-IndexPage.getInitialProps = async (ctx) => {
-
-}
-
 
 export default IndexPage
