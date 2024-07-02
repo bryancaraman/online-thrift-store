@@ -5,17 +5,23 @@
 
 ## Preqrequities
 
-- NodeJS v14 (or higher)
+- NodeJS v20
 - Visual Studio Code
 - Git
 
-To get started, fork this repo and then clone your copy locally:
-
-```bash
-git clone https://github.secureserver.net/{your-user-id}/bootcamp-shopping-cart.git
+To get started, fork this repo
+```
+https://github.com/txwilliams-godaddy/BootCampCart-UI
 ```
 
-Then, let's make sure we have the BootCamp-API you worked on previously [running locally](https://github.secureserver.net/thoag/2021Bootcamp-API#run-locally).
+Then, and then clone your copy locally:
+```bash
+git clone https://github.com/txwilliams-godaddy/BootCampCart-UI.git
+cd BootCampCart-UI
+code . #this opens up the visual studio code with the project as your working directory
+```
+
+Then, let's make sure we have the BootCampCart-API you worked on [previously](https://github.com/thoag-godaddy/BootCampCart-API).
 
 Install with:
 
@@ -366,8 +372,6 @@ Now go forth and fetch!
 
 Gasket: https://github.com/godaddy/gasket
 - Gasket Plugins:  https://gasket.dev/#/README
-
-Confluence: https://confluence.godaddy.com/display/URBC/2020+Bootcamp+Home+Page
 
 Training URLS: 
 - Pluralsight

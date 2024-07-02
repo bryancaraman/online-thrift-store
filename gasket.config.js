@@ -3,8 +3,5 @@ module.exports = {
     presets: [
       '@gasket/nextjs',
     ],
-    add: [
-      '@gasket/jest',
-    ],
   },
 };

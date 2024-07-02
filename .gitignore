@@ -1,37 +1,28 @@
-.DS_Store
-.idea/
-.linaria-cache/
+# See https://help.github.com/ignore-files/ for more about ignoring files.
 
-.next
-dist/
-/lib
-node_modules/
-cjs/
-esm/
-css/
-npm-debug.log
-selenium-debug.log
-
-*.iml
-coverage/
-junit/
-docs/
-out/
-build-reports/
-mockserver.log
-mockserver_keystore.jks
-typings/
-jsconfig.json
-.vscode/
-test-report.xml
-prettier/
-storybook-static/
-.storybook/preview-body.html
-.storybook/preview-head.html
-.storybook/theme-switcher-toolbar.json
+# dependencies
 node_modules
-wrhs.toml
-secrets/
-ceph/
-access_key_id.*
-secret_access_key.*
+
+# testing
+coverage
+reports
+
+# production
+dist
+build
+.next
+
+# misc
+.env
+.idea
+*.iml
+*.log
+*.bak
+.DS_Store
+
+# special
+app.config.local.js*
+gasket.config.local.js*
+.docs
+
+
