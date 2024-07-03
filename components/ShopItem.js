@@ -12,8 +12,9 @@ const images = [
 
 function ShopItem({ product_id, name, description, price, is_on_sale, sale_price, onAddToCart}) {
     const addToCart = () => {
-        onAddToCart({ product_id, name, description, price, is_on_sale, sale_price, quantity: 1})
+        onAddToCart({ product_id, name, description, price, is_on_sale, sale_price})
     }
+    console.log(onAddToCart);
 
     return (
         <Card style={{height: "400px"}}>
