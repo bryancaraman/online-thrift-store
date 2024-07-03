@@ -2,11 +2,11 @@
 import React from 'react';
 import Head from '../components/head';
 
-export const IndexPage = (props) => (
+export const CartPage = (props) => (
   <div>
     <Head title='Home'/>
-    <h1>Welcome</h1>
+    <h1>My Cart</h1>
   </div>
 );
 
-export default IndexPage
+export default CartPage
