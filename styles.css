@@ -1,6 +1,7 @@
 body {
-  background-color: rgb(12,51,84);
-  color: white;
+  background-color: rgb(242, 235, 226);
+  color: rgb(110, 60, 25);
+  font-family: 'Libre Baskerville', serif;
 }
 
 a:visited {
