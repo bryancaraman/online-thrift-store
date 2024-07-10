@@ -20,14 +20,27 @@ function ShopItemList() {
     }, [])
 
     const handleAddToCart = async (product) => {
-        const body = JSON.stringify(product);
-        const response = await fetch(ADD_TO_CART_URL, { method: 'POST', body, headers: { 'content-type': 'application/json' }});
-        router.push("/cart")
-      }
+        /* fetch current cart items */
+        const response = await fetch(ADD_TO_CART_URL, { method: 'GET'});
+        const cartItems = await response.json();
+    
+        const existingCartItem = cartItems.find(item => (item.product_id === product.product_id));
+
+        if (existingCartItem) {
+            const updatedItem = { ...existingCartItem, quantity: existingCartItem.quantity + 1 };
+            const body = JSON.stringify(updatedItem);
+            await fetch(ADD_TO_CART_URL, { method: 'PATCH', body, headers: { 'content-type': 'application/json' }});
+        } 
+        else {
+            const body = JSON.stringify({ ...product, quantity: 1 });
+            await fetch(ADD_TO_CART_URL, { method: 'POST', body, headers: { 'content-type': 'application/json' }});
+        }
+        router.push('/cart')
+    }
     
 
-      return (
-        <Grid container spacing={3} sx={{ padding: 2 }}>
+    return (
+        <Grid container direction="row" spacing={1}>
             {products.map(product =>
                 <Grid item xs={12} sm={6} md={4} lg={3} key={product.id}>
                     <ShopItem
