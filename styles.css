@@ -119,3 +119,89 @@ a:hover::after {
     padding: 15px;
   }
 }
+
+/*-------------Home Page-------------*/
+.HomePage {
+  text-align: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.HomePage-header {
+  background-color: #f2ebe2;
+  padding: 20px;
+  color: #6e3c19;
+}
+
+/* ------------------------ Navbar ----------------------*/
+nav {
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
+}
+.flex-container {
+  display: flex;
+  justify-content: space-around;
+}
+.nav-item {
+  padding: 10px;
+  margin: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 3px 0 rgba(0,0,0,.2);
+}
+
+.item-list {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.item-card {
+  width: 200px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.item-card img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+footer {
+  background-color: #f2ebe2;
+  color: #6e3c19;
+  padding: 10px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+/* ------------------------ Intro Section ----------------------*/
+
+#Intro {
+  background-color: #8a9a5b;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+.intro-part {
+  padding: 10px;
+  margin-left: 20px;
+  text-align: left;
+}
+.second {
+  margin-left: 50px;
+
+}
+#Big-text {
+  font-family: "Century Gothic", CenturyGothic, HomePageleGothic, sans-serif; 
+  font-size: 50px; 
+  text-transform: uppercase;
+}
+
+/* ------------------------ Carousel ----------------------*/
+#CarouselImages {
+  width: 250px;
+  height: 350px;
+}
