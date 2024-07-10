@@ -8,7 +8,11 @@ embracing a more sustainable future through thoughtful consumption!
 Team:
 
 Bryan Caraman 
+
 Elizabeth Tulloch
+
 Justin Harper
+
 Arielle Barnes
+
 Yuneydy Paredes
