@@ -9,6 +9,7 @@ import Head from '../components/head';
 import Link from 'next/link';
 import { Container, Typography, Box, Grid, IconButton, InputBase, List, ListItem, ListItemText, ListItemIcon, Select, MenuItem, FormControl, InputLabel } from '@mui/material';
 import { FavoriteBorder, PersonOutline, ShoppingCart } from '@mui/icons-material';
+import ShopItemList from '../components/ShopItemList'
 
 const ShopPage = () => {
   const [size, setSize] = useState('');
@@ -112,19 +113,8 @@ const ShopPage = () => {
         </Box>
        
        {/* Product Grid */}
-        <Box flex="1">
-          <Grid container spacing={3}>
-            {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map((item) => (
-              <Grid item xs={12} sm={6} md={4} key={item}>
-                <Box
-                  border={1}
-                  borderColor="#6E3C19" 
-height="330px">
-                </Box>
-              </Grid>
-            ))}
-          </Grid>
-        </Box>
+       <ShopItemList/>
+        
       </Box>
     </Container>
   );
