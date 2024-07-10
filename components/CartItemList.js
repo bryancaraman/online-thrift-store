@@ -18,12 +18,13 @@ function CartItemList() {
         const json = await response.json();
         setItems(json);
     }, [])
-    let count = 0
+    //to do: add this after grid: "Total: " + sum (below) and I am trying to add a lambda function to make it easier
+    // let sum = Object.values(items).reduce((partialSum, a) => partialSum + a, 0)
+    
     return (
         /* Add your ShoppingItem components here! */
         /* How should you iterate over the list of products?  */
         /* Hint: map() function for Arrays */
-
         <Grid container direction="row" spacing={1}>
             {Object.values(items).map(item => 
                 <Grid item xs>
@@ -41,6 +42,8 @@ function CartItemList() {
                 </Grid>
             )}
         </Grid>
+
+
     )
 }
 

@@ -11,8 +11,8 @@ export const ShopPage = (props) => (
         <div>
             <Head title='Home'/>
             <div>
-                <Typography variant="h3">My Shop</Typography>  
-                <Link href="/cart">View cart</Link> 
+                <Typography variant="h3">Thrift Shop</Typography>  
+                <Link href="/cart" >  View cart</Link> 
                 <ShopItemList/>
             </div>
         </div>

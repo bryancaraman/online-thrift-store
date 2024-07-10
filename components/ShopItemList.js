@@ -20,36 +20,17 @@ function ShopItemList() {
     }, [])
 
     const handleAddToCart = async (product) => {
-        /* fetch current cart items */
-        const response = await fetch(ADD_TO_CART_URL, { method: 'GET'});
-        const cartItems = await response.json();
-    
-        const existingCartItem = cartItems.find(item => (item.product_id === product.id));
-    
-        if (existingCartItem) {
-            const updatedItem = { ...existingCartItem, quantity: existingCartItem.quantity + 1 };
-            const body = JSON.stringify(updatedItem);
-            await fetch(ADD_TO_CART_URL, { method: 'POST', body, headers: { 'content-type': 'application/json' }});
-
-        } 
-        else {
-            const body = JSON.stringify({ ...product, quantity: 1 });
-            await fetch(ADD_TO_CART_URL, { method: 'POST', body, headers: { 'content-type': 'application/json' }});
-
-        }
-        router.push('/cart')
-    }
+        const body = JSON.stringify(product);
+        const response = await fetch(ADD_TO_CART_URL, { method: 'POST', body, headers: { 'content-type': 'application/json' }});
+        router.push("/cart")
+      }
     
 
-    return (
-        /* Add your ShoppingItem components here! */
-        /* How should you iterate over the list of products?  */
-        /* Hint: map() function for Arrays */
-        <Grid container direction="row" spacing={1}>
+      return (
+        <Grid container spacing={3} sx={{ padding: 2 }}>
             {products.map(product =>
-                <Grid item xs>
+                <Grid item xs={12} sm={6} md={4} lg={3} key={product.id}>
                     <ShopItem
-                        key={product.id}
                         product_id={product.id}
                         name={product.name}
                         description={product.description}
@@ -65,4 +46,4 @@ function ShopItemList() {
     )
 }
 
-export default ShopItemList
+export default ShopItemList;

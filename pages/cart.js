@@ -1,26 +1,43 @@
-/* eslint-disable no-unused-vars */
 import React from 'react';
 import Head from '../components/head';
 import Link from 'next/link';
 import CartItemList from '../components/CartItemList';
 
-import { Container, Typography, Style } from '@mui/material'
+import { Container, Typography, Box } from '@mui/material'
 
 
 export const CartPage = (props) => (
-  <Container>
+    <Container>
       <div>
-          <Head title='Home'/>
-          <div>
-              <Typography variant="h3" style={{ fontFamily: 'Gill Sans' }}>My Cart</Typography>   
-              <CartItemList/>
-          </div>
-          <div>
-              <Link href="/shop" style={{ fontFamily: 'Gill Sans' }}>Shop</Link>
-          </div>
+        <Head title='Cart' />
+        <Box 
+          sx={{ 
+            display: 'flex', 
+            justifyContent: 'space-between', 
+            alignItems: 'center', 
+            mb: 3 
+          }}
+        >
+          <Typography variant="h3" sx={{ fontFamily: 'Gill Sans' }}>
+            My Cart
+          </Typography>
+          <Link href="/shop" passHref>
+            <Typography 
+              component="a" 
+              sx={{ 
+                fontFamily: 'Gill Sans',
+                textDecoration: 'none',
+                color: 'primary.main',
+              }}
+            >
+              Shop
+            </Typography>
+          </Link>
+        </Box>
+        <CartItemList />
       </div>
-  </Container>
-);
-
-
-export default CartPage
+    </Container>
+  );
+  
+  export default CartPage;
+  
