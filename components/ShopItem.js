@@ -10,23 +10,22 @@ const images = [
   "https://img1.wsimg.com/cdn/Image/All/FOS-Intl/1/en-US/3b91b99f-57eb-44bd-b2e1-1cfd6529bbfb/feat-ols-your-store-your-way.jpg?impolicy=cms-feature-module"
 ]
 
-function ShopItem({ product_id, name, description, price, is_on_sale, sale_price, onAddToCart}) {
+function ShopItem({ product_id, name, description, image_url, price, is_on_sale, sale_price, onAddToCart}) {
     const addToCart = () => {
-        onAddToCart({ product_id, name, description, price, is_on_sale, sale_price, quantity: 1})
+        onAddToCart({ product_id, name, price, quantity: 1 })
     }
 
     return (
         <Card style={{height: "400px"}}>
             <CardMedia
-                sx={{ height: "140px"}}
+                sx={{ height: "150px"}}
                 image={images[product_id]}
                 title={name}
             />
             <CardContent>
                 <Typography variant="h5">{name}</Typography>
                 <Typography variant="h8">{description}</Typography>
-                <Typography variant="h6">{is_on_sale}</Typography>
-                <Typography variant="h6">{price}</Typography>
+                <Typography variant="h6">Price: ${price}</Typography>
             </CardContent>
             <CardActions>
                 <Button variant="text" color="primary" onClick={addToCart}>Add To Cart</Button>
