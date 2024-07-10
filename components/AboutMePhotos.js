@@ -3,7 +3,7 @@ import { Card, Button, CardContent, CardMedia, CardActions, Typography, CardHead
 import Link from 'next/link'; 
 
 const images = [
-   "lizzy.png", "bryan.png","Justin.png", "yuneydy.png","Arielle.png"
+   "liz.png", "bryan.png","Justin.png", "yuneydy.png","Arielle.png"
   
 ];
 
@@ -12,7 +12,7 @@ const names = [
     , "Justin Harper ", "Yuneydy Paredes","Arielle Barnes"
 ];
 
-const descriptions = ["Hey! My name is Elizabeth Tulloch and i am a rising sophmore at the Univeritsy of Georgia! I started out my freshman year with not alot of knowlage about coding and left with a true passion for it! I enjoy fullstack devlopment and this project really helped me gain a better appreciation for front end. In my spare time I love to go to the gym, go on hikes and try new food! "," I am an incoming junior this fall studying computer science at the University of Texas at Dallas! I am immensely curious + excited to learn, so I am always interested in tackling new challenges and hearing about anything you find fascinating! I enjoy full stack development but mostly focus on back-end work. In my free time I love to swim, workout, watch movies, and play video games!","I am an incoming sophomore studying computer science at Stony Brook University! I am a first generation student and since high school I have had a ferver to get involved in coding where it was command line interfaces or robotics! The more I branch into other sectors of CS the more I am enthralled by it. Outside of CS, I enjoy building complex lego sets, yo-yoing, and cooking new recipes! ","Hi,I am a rising junior attending Wellesley College. I am studying Computer Science with a minor in Latinx Studies. In the future I hope to become a software engineer with a focus in full-stack engineering. In my free time, I enjoy crochet, video games, and reading.", "Hey everyone! My name is Arielle Barnes and I go to Ohio State University. I love listening for music, designing, sports and more" ]
+const descriptions = ["Hey! My name is Elizabeth Tulloch and I am a rising sophmore at the University of Georgia! I started out my freshman year with limited knowlage about coding and finished with a true passion for it! I enjoy fullstack devlopment and this project really helped me gain a better appreciation for front end. In my spare time I love to go to the gym, go on hikes and try new food! "," I am an incoming junior this fall studying computer science at the University of Texas at Dallas! I am immensely curious + excited to learn, so I am always interested in tackling new challenges and hearing about anything you find fascinating! I enjoy full stack development but mostly focus on back-end work. In my free time I love to swim, workout, watch movies, and play video games!","I am an incoming sophomore studying computer science at Stony Brook University! I am a first generation student and since high school I have had a ferver to get involved in coding where it was command line interfaces or robotics! The more I branch into other sectors of CS the more I am enthralled by it. Outside of CS, I enjoy building complex lego sets, yo-yoing, and cooking new recipes! ","Hi,I am a rising junior attending Wellesley College. I am studying Computer Science with a minor in Latinx Studies. In the future I hope to become a software engineer with a focus in full-stack engineering. In my free time, I enjoy crochet, video games, and reading.", "Hey everyone! My name is Arielle Barnes and I go to Ohio State University. I love listening for music, designing, sports and more" ]
 
 const AMphotos = () => {
     const [x, setX] = useState(0); 
@@ -21,14 +21,14 @@ const AMphotos = () => {
 
         setX((prevX) => (prevX + 1) % names.length);
     };
-    console.log(images[x]);
+    
     return (
         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '75vh' }}>
         <Card sx={{ maxWidth: 500 }} elevation={3} >
             <CardHeader title= {names[x] }align="center" />
             <CardMedia
               component="img"
-                sx={{ height: "240px" }}
+                sx={{ height: "400px" }}
                 image={images[x]}
                 align="center"
             />
