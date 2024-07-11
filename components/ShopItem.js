@@ -12,7 +12,12 @@ const images = [
 
 function ShopItem({ product_id, name, description, image_url, price, is_on_sale, sale_price, onAddToCart}) {
     const addToCart = () => {
-        onAddToCart({ product_id, name, price, quantity: 1 })
+        if (is_on_sale) {
+            onAddToCart({ product_id, name, image_url, sale_price, quantity: 1 })
+        }
+        else {
+            onAddToCart({ product_id, name, image_url, price, quantity: 1 })
+        }
     }
 
     return (
