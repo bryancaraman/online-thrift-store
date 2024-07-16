@@ -21,10 +21,10 @@ function ShopItem({ product_id, name, description, image_url, price, is_on_sale,
     }
 
     return (
-        <Card style={{height: "400px"}}>
+        <Card style={{height: "500px"}}>
             <CardMedia
-                sx={{ height: "150px"}}
-                image={images[product_id]}
+                sx={{ height: "290px"}}
+                image={image_url}
                 title={name}
             />
             <CardContent>

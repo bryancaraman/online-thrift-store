@@ -12,7 +12,10 @@ function CartItemList() {
 
     const total = items
         .map(item => item.quantity * item.price)
-        .reduce((nextValue, total) => nextValue + total, 0)
+        .reduce((nextValue, total) => nextValue + total, 0);
+    const tax = Number((total * .08625).toFixed(2));
+    const shippingAndHandling = total > 25 ? 0 : 4.99;
+    const total_price = total + tax + shippingAndHandling;
 
     useEffect(async () => {
         /* fetch list of products here */
@@ -93,11 +96,11 @@ function CartItemList() {
             <div className="right-side">
                 <div className="order-summary">
                     <h2>Order Summary</h2>
-                    <p>+ Estimated Total: $ {total.toFixed(2)}</p>
-                    <p>+ Tax: $ {(total * .08625).toFixed(2)} </p>
-                    <p>+ Shipping & Handling: $ {total > 25 ? 0 : 4.99} </p>
+                    <p>+ Subtotal: $ {total.toFixed(2)}</p>
+                    <p>+ Tax: $ {tax} </p>
+                    <p>+ Shipping & Handling: $ {shippingAndHandling} </p>
                     <p style={{ fontSize: "1.2rem", fontWeight: "bold", marginTop: "1rem" }}>
-                        + Total: $ {total}
+                        + Total: $ {total_price}
                     </p>
                     {/* <button className="btn">Pay</button> Pt:2 -> Would want to click this and the below show */}
 

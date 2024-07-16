@@ -2,7 +2,7 @@ import React from "react";
 import { Card, CardContent, CardActions, Button, CardMedia, Typography } from '@mui/material';
 
 const images = [
-    "https://img1.wsimg.com/cdn/Image/All/AllChannelsFoS/1/en-US/c8d98599-46cc-412d-bbb5-d766bb0e5a05/Product-grid-SSL.jpg",
+    "https://www.lenversfashion.com/cdn/shop/files/AGNESLIGHTPINKMOHAIRMERINOWOOL_7_x800.jpg?v=1708100344",
     "https://img1.wsimg.com/cdn/Image/All/AllChannelsFoS/1/en-US/44957d35-8edb-43cf-b518-457ff48a7e16/Product-grid-WDS.jpg",
     "https://img1.wsimg.com/cdn/Image/All/AllChannelsFoS/1/en-US/4626b5ac-8ac0-4e88-ae38-dd94cb12a89d/Product-grid-Email.jpg",
     "https://img1.wsimg.com/cdn/Image/All/AllChannelsFoS/1/en-US/c8d98599-46cc-412d-bbb5-d766bb0e5a05/Product-grid-SSL.jpg",
@@ -17,16 +17,17 @@ function CartItem({ product_id, name, image_url, price, quantity, onRemoveFromCa
     }
 
     return (
-        <Card style={{height: "400px"}}>
+        <Card style={{height: "500px"}}>
             <CardMedia
-                sx={{ height: "150px"}}
-                image={images[product_id]}
+                sx={{ height: "290px", width:"90%"}}
+                image={image_url}
+                align="center"
                 title={name}
             />
             <CardContent>
-                <Typography variant="h4"> {name} </Typography>
+                <Typography variant="h5"> {name} </Typography>
                 <Typography variant= "h6">Quantity: {quantity}</Typography>
-                <Typography variant="h5">Price: ${price}</Typography>
+                <Typography variant="h6">Price: ${price}</Typography>
             </CardContent>
             <CardActions>
                 <Button onClick={removeFromCart} color="primary">Remove from cart</Button>
