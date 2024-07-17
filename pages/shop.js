@@ -45,10 +45,10 @@ const ShopPage = () => {
           <img src="/secondChance.png" alt="Logo" style={{ height: '40px' }} />
         </Box>
         <Box display="flex" alignItems="center">
-          <Link href="/shop" passHref>
+          <Link href="./shop" passHref>
             <Typography variant="body1" component="a" style={{ color: '#6E3C19', margin: '0 16px' }}>SHOP</Typography>
           </Link>
-          <Link href="/sell" passHref>
+          <Link href="./sell" passHref>
             <Typography variant="body1" component="a" style={{ color: '#6E3C19', margin: '0 16px' }}>SELL</Typography>
           </Link>
         </Box>
@@ -57,9 +57,11 @@ const ShopPage = () => {
           <InputBase placeholder="Search" style={{ margin: '0 16px', border: '1px solid beige', padding: '4px' }} />
           <IconButton style={{ color: '#8A9A5B' }}><FavoriteBorder /></IconButton>
           <IconButton style={{ color: '#8A9A5B' }}><PersonOutline /></IconButton>
-          <IconButton style={{ color: '#8A9A5B' }}><ShoppingCart /></IconButton>
+          <IconButton style={{ color: '#8A9A5B' }} ><ShoppingCart /></IconButton>
         </Box>
+  
       </Box>
+
       
       {/* Filters and Product Grid */}
       <Box display="flex" mt={5}>

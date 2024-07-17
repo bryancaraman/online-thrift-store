@@ -24,9 +24,9 @@ function CartItem({ product_id, name, image_url, price, quantity, onRemoveFromCa
                 title={name}
             />
             <CardContent>
-                <Typography variant="h4"> {name} </Typography>
-                <Typography variant= "h6">Quantity: {quantity}</Typography>
-                <Typography variant="h5">Price: ${price}</Typography>
+                <Typography variant="h7"> {name} </Typography>
+                <Typography variant= "h7">Quantity: {quantity}</Typography>
+                <Typography variant="h7">Price: ${price}</Typography>
             </CardContent>
             <CardActions>
                 <Button onClick={removeFromCart} color="primary">Remove from cart</Button>
