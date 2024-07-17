@@ -205,3 +205,42 @@ footer {
   width: 250px;
   height: 350px;
 }
+
+/* ------------------------Order Summary ------------------*/
+.order-summary {
+  padding: 1rem;
+  border: 1px solid #ddd;
+  margin-top: 1rem;
+}
+
+.btn {
+  background-color: #007bff;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.payment-info {
+  margin-top: .5rem;
+}
+.payment .MuiTextField-root {  /* Target all TextField components within .payment */
+  margin-bottom: 1rem;
+}
+
+/* --------------- Cart Dimensions --------- */ 
+.container {
+  display: flex; /* Enable flexbox for the container */
+  min-height: 100vh; /* Set minimum height for full viewport */
+}
+
+.right-side {
+  flex: 0 0 30%;  /* Set width to 30% of the container */
+  background-color: #D9BFA4; 
+  padding: 1rem;
+}
+
+.left-side {
+  flex: 1;  /* Take up remaining space */
+}
