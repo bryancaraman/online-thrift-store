@@ -90,7 +90,9 @@ const Selling = () => {
                     <InputBase placeholder="Search" style={{ margin: '0 16px', border: '1px solid beige', padding: '4px' }} />
                     <IconButton style={{ color: '#8A9A5B' }}><FavoriteBorder /></IconButton>
                     <IconButton style={{ color: '#8A9A5B' }}><PersonOutline /></IconButton>
-                    <IconButton style={{ color: '#8A9A5B' }}><ShoppingCart /></IconButton>
+                    <Link legacyBehavior href="/cart">
+                        <IconButton style={{ color: '#8A9A5B' }} ><ShoppingCart /></IconButton>
+                    </Link>
                     </Box>
                 </Box>
             </header>
