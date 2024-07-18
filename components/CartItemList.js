@@ -11,18 +11,22 @@ function CartItemList() {
     const [items, setItems] = useState([]);
 
     const total = items
-        .map(item => item.quantity * item.price)
-        .reduce((nextValue, total) => nextValue + total, 0);
+    .map(item => item.quantity * item.price)
+    .reduce((nextValue, total) => nextValue + total, 0);
     const tax = Number((total * .08625).toFixed(2));
     const shippingAndHandling = total > 25 ? 0 : 4.99;
     const total_price = total + tax + shippingAndHandling;
 
-    useEffect(async () => {
+    useEffect(() => {
         /* fetch list of products here */
         /* update product state with response */
-        const response = await fetch(CART_URL, { method: 'GET' });
-        const json = await response.json();
-        setItems(json);
+        const fetchCartitems = async () => {
+            const response = await fetch(CART_URL, { method: 'GET' });
+            const json = await response.json();
+            setItems(json);
+        }
+
+        fetchCartitems();
     }, [])
 
     function deleteItem(product_id) {
