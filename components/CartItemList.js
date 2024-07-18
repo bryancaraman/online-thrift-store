@@ -100,7 +100,7 @@ function CartItemList() {
                     <p>+ Tax: $ {tax} </p>
                     <p>+ Shipping & Handling: $ {shippingAndHandling} </p>
                     <p style={{ fontSize: "1.2rem", fontWeight: "bold", marginTop: "1rem" }}>
-                        + Total: $ {total_price}
+                        + Total: $ {total_price.toFixed(2)}
                     </p>
                     {/* <button className="btn">Pay</button> Pt:2 -> Would want to click this and the below show */}
 

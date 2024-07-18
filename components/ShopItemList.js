@@ -4,20 +4,24 @@ import { useRouter } from 'next/router'
 import ShopItem from "./ShopItem";
 
 function ShopItemList() {
-    const PRODUCTS_URL = "http://localhost:8000/v1/products"
-    const ADD_TO_CART_URL = "http://localhost:8000/v1/cartitems"
+    const PRODUCTS_URL = "http://localhost:8000/v1/products";
+    const ADD_TO_CART_URL = "http://localhost:8000/v1/cartitems";
 
     // this is the state we will use to hold the response from the api
     const [products, setProducts] = useState([]);
-    const router = useRouter()
+    const router = useRouter();
 
-    useEffect(async () => {
+    useEffect(() => {
         /* fetch list of products here */
         /* update product state with response */
-        const response = await fetch(PRODUCTS_URL, { method: 'GET'});
-        const json = await response.json();
-        setProducts(json)
-    }, [])
+        const fetchProducts = async () => {
+            const response = await fetch(PRODUCTS_URL, { method: 'GET'});
+            const json = await response.json();
+            setProducts(json);
+        };
+
+        fetchProducts();
+    }, []);
 
     const handleAddToCart = async (product) => {
         /* fetch current cart items */
@@ -35,7 +39,7 @@ function ShopItemList() {
             const body = JSON.stringify({ ...product, quantity: 1 });
             await fetch(ADD_TO_CART_URL, { method: 'POST', body, headers: { 'content-type': 'application/json' }});
         }
-        router.push('/cart')
+        router.push('/cart');
     }
     
 

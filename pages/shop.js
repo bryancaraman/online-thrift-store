@@ -35,38 +35,45 @@ const ShopPage = () => {
   return (
     
     <Container>
-      <Head title='Welcome to the Shop' />
+      <Head title='Welcome to the Shop!' />
       
       {/* Search Bar */}
-      <Box display="flex" justifyContent="space-between" alignItems="center" py={2} borderBottom={1} borderColor="brown.500">
-        <Box display="flex" alignItems="center">
+      <header className='HomePage-header'>
+        <Box display="flex" justifyContent="space-between" alignItems="center" py={1} borderBottom={1} borderColor="brown.500">
+            <Box display="flex" alignItems="center">
+              <Link legacyBehavior href="/">
+                <img src="/BrownLogo.png" alt="Logo" style={{ height: '50px' }} />
+              </Link>
+            </Box>
+            <Box display="flex" alignItems="center">
+              <Link legacyBehavior href="/aboutMe">
+                  <a style={{ color: '#6E3C19', margin: '0 16px' }}>ABOUT US</a>
+              </Link>
+              <Link legacyBehavior href="/shop">
+                <a style={{ color: '#6E3C19', margin: '0 16px' }}>SHOP</a>
+              </Link>
+              <Link legacyBehavior href="/sell">
+                <a style={{ color: '#6E3C19', margin: '0 16px' }}>SELL</a>
+              </Link>
+            </Box>
           
-          {/* Second Chance Logo Image */}
-          <img src="/secondChance.png" alt="Logo" style={{ height: '40px' }} />
+          <Box display="flex" alignItems="center">
+            <InputBase placeholder="Search" style={{ margin: '0 16px', border: '1px solid beige', padding: '4px' }} />
+            <IconButton style={{ color: '#8A9A5B' }}><FavoriteBorder /></IconButton>
+            <IconButton style={{ color: '#8A9A5B' }}><PersonOutline /></IconButton>
+            <Link legacyBehavior href="/cart">
+              <IconButton style={{ color: '#8A9A5B' }} ><ShoppingCart /></IconButton>
+            </Link>
+          </Box>
+    
         </Box>
-        <Box display="flex" alignItems="center">
-          <Link href="./shop" passHref>
-            <Typography variant="body1" component="a" style={{ color: '#6E3C19', margin: '0 16px' }}>SHOP</Typography>
-          </Link>
-          <Link href="./sell" passHref>
-            <Typography variant="body1" component="a" style={{ color: '#6E3C19', margin: '0 16px' }}>SELL</Typography>
-          </Link>
-        </Box>
-        
-        <Box display="flex" alignItems="center">
-          <InputBase placeholder="Search" style={{ margin: '0 16px', border: '1px solid beige', padding: '4px' }} />
-          <IconButton style={{ color: '#8A9A5B' }}><FavoriteBorder /></IconButton>
-          <IconButton style={{ color: '#8A9A5B' }}><PersonOutline /></IconButton>
-          <IconButton style={{ color: '#8A9A5B' }} ><ShoppingCart /></IconButton>
-        </Box>
-  
-      </Box>
-
+      </header>
       
       {/* Filters and Product Grid */}
       <Box display="flex" mt={5}>
         {/* Filters */}
         <Box width="200px" pr={4.5}>
+          <Typography padding={1} >Filters:</Typography>
  <FormControl fullWidth variant="outlined" margin="normal">
             <InputLabel>Size</InputLabel>
             <Select value={size} onChange={handleSizeChange} label="Size">
@@ -121,4 +128,5 @@ const ShopPage = () => {
     </Container>
   );
 };
+
 export default ShopPage;

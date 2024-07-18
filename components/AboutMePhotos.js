@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Card, Button, CardContent, CardMedia, CardActions, Typography, CardHeader } from '@mui/material';
+import { Card, Button, CardContent, CardMedia, CardActions, Typography, CardHeader, Box, InputBase, IconButton } from '@mui/material';
+import { FavoriteBorder, PaddingRounded, PersonOutline, ShoppingCart } from '@mui/icons-material';
 import Link from 'next/link'; 
 
 const images = [
@@ -23,6 +24,45 @@ const AMphotos = () => {
     };
     
     return (
+        <div>
+        <header className='HomePage-header'>
+        <Box display="flex" justifyContent="space-between" alignItems="center" py={1} borderBottom={1} borderColor="brown.500">
+            <Box display="flex" alignItems="center">
+              <Link legacyBehavior href="/">
+                <img src="/BrownLogo.png" alt="Logo" style={{ height: '50px' }} />
+              </Link>
+            </Box>
+            <Box display="flex" alignItems="center">
+              <Link legacyBehavior href="/aboutMe">
+                  <a style={{ color: '#6E3C19', margin: '0 16px' }}>ABOUT US</a>
+              </Link>
+              <Link legacyBehavior href="/shop">
+                <a style={{ color: '#6E3C19', margin: '0 16px' }}>SHOP</a>
+              </Link>
+              <Link legacyBehavior href="/sell">
+                <a style={{ color: '#6E3C19', margin: '0 16px' }}>SELL</a>
+              </Link>
+            </Box>
+          
+          <Box display="flex" alignItems="center">
+            <InputBase placeholder="Search" style={{ margin: '0 16px', border: '1px solid beige', padding: '4px' }} />
+            <IconButton style={{ color: '#8A9A5B' }}><FavoriteBorder /></IconButton>
+            <IconButton style={{ color: '#8A9A5B' }}><PersonOutline /></IconButton>
+            <Link legacyBehavior href="/cart">
+              <IconButton style={{ color: '#8A9A5B' }} ><ShoppingCart /></IconButton>
+            </Link>
+          </Box>
+    
+        </Box>
+      </header>
+
+      <h1> <center>Welcome to our team</center> </h1>
+
+        <Typography variant="body1" color="green" align="center" padding={1}>We are a dynamic team of intern boot campers at GoDaddy, driven by our passion for sustainable solutions. Tasked with applying our training in APIs, Python, HTML, and CSS, and more we have crafted a captivating storefront and seamless shopping cart experience. 
+            Inspired by GoDaddy's commitment to sustainability, we take pride in creating a website that resonate with our values and yours. Explore our site and join us in 
+            embracing a more sustainable future through thoughtful consumption!
+        </Typography>
+
         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '75vh' }}>
         <Card sx={{ maxWidth: 500 }} elevation={3} >
             <CardHeader title= {names[x] }align="center" />
@@ -36,16 +76,12 @@ const AMphotos = () => {
                 <Typography variant="body2" color="green" align="center">{descriptions[x]}</Typography>
             </CardContent>
             <CardActions>
-                <Button onClick={change_person}> Next team member!</Button>
-                <Link href="/" >
-                     <Button
-                        variant="contained"
-                        color="primary"
-                        style={{ position: 'absolute', top: 10, left: 10,backgroundColor: '#6e3c19'}}>
-                                back to home </Button>
-                </Link>
+                <div className='flex-button'>
+                    <Button className='about-button' onClick={change_person}> Next team member!</Button>
+                </div>
             </CardActions>
         </Card>
+        </div>
         </div>
     );
 };

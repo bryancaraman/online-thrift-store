@@ -3,7 +3,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import NextHead from 'next/head';
 
-const Head = ({ title, description }) => (
+const Head = ({ title = 'Second Chance Styles', description = 'Online Thrift Store' }) => (
   <NextHead>
     <meta charSet='UTF-8'/>
     <title>{title}</title>
@@ -15,11 +15,6 @@ const Head = ({ title, description }) => (
 Head.propTypes = {
   title: PropTypes.string,
   description: PropTypes.string
-};
-
-Head.defaultProps = {
-  title: 'bootcamp-shopping-cart',
-  description: 'A basic gasket app'
 };
 
 export default Head;
