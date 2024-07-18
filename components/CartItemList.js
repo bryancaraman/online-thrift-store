@@ -31,7 +31,7 @@ function CartItemList() {
                 if (response.ok) {
                     if (items.length > 0) {
                         const updatedItems = items.filter(item => item.id != product_id);
-                        this.setState({ items: updatedItems })
+                        setItems({ items: updatedItems })
                     }
                 }
                 else {

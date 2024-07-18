@@ -3,7 +3,7 @@ import Head from '../components/head';
 import Link from 'next/link';
 import CartItemList from '../components/CartItemList';
 
-import { Container, Typography, Box, InputBase, IconButton } from '@mui/material'
+import { Container, Box, InputBase, IconButton } from '@mui/material'
 import { FavoriteBorder, PersonOutline, ShoppingCart } from '@mui/icons-material';
 
 
