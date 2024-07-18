@@ -23,6 +23,9 @@ body {
   padding: 20px;
 }
 
+.featured {
+  text-shadow: 1px 1px 2px #fff, 0 0 1em rgba(255, 255, 255, 0.317), 0 0 0.2em #6e3c19;
+}
 h1, h2, h3, h4, h5, h6 {
   color: var(--secondary-color);
   transition: color 0.3s ease;
@@ -142,9 +145,15 @@ nav {
 }
 .nav-item {
   padding: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
   margin: 10px;
   border-radius: 8px;
   box-shadow: 0 2px 3px 0 rgba(0,0,0,.2);
+}
+
+.nav-item:hover {
+  box-shadow: rgba(106, 116, 78, 0.25) 0px 30px 60px -12px inset, rgba(77, 107, 78, 0.3) 0px 18px 36px -18px inset;
 }
 
 .item-list {
@@ -174,7 +183,6 @@ footer {
   background-color: #f2ebe2;
   color: #6e3c19;
   padding: 10px;
-  position: fixed;
   bottom: 0;
   width: 100%;
 }
@@ -183,7 +191,7 @@ footer {
 
 #Intro {
   background-color: #8a9a5b;
-  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+  box-shadow: rgb(255, 255, 255) 0px 1px 2px 0px;
 }
 .intro-part {
   padding: 10px;
@@ -192,8 +200,10 @@ footer {
 }
 .second {
   margin-left: 50px;
-
+  color: #4b260b;
+  font-family: "Open Sans", sans-serif;
 }
+
 #Big-text {
   font-family: "Century Gothic", CenturyGothic, HomePageleGothic, sans-serif; 
   font-size: 50px; 
@@ -202,10 +212,19 @@ footer {
 
 /* ------------------------ Carousel ----------------------*/
 #CarouselImages {
-  width: 250px;
   height: 350px;
 }
 
+.caroButton {
+  padding: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 3px 0 rgba(0,0,0,.2);
+  background-color: #f2ebe2;
+  border-style: none;
+}
 /* ------------------------Order Summary ------------------*/
 .order-summary {
   padding: 1rem;

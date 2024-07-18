@@ -23,15 +23,15 @@ const Carousel = ({ images }) => {
           <motion.img id='CarouselImages'
             key={currentIndex}
             src={images[currentIndex]}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
+            //initial={{ opacity: 0 }}
+            //animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.5 }}
           />
         </AnimatePresence>
       </div>
-      <button onClick={handlePrevious}>Previous</button>
-      <button onClick={handleNext}>Next</button>
+      <button class='caroButton' onClick={handlePrevious}>Previous</button>
+      <button class='caroButton' onClick={handleNext}>Next</button>
     </div>
   );
 };

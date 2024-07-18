@@ -1,45 +1,63 @@
 /* eslint-disable no-unused-vars */
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import Head from '../components/head';
 import aboutMePage from './aboutMe';
 import Link from 'next/link';
-import { Button } from '@mui/material';
 import Carousel from '../components/Carousel';
+import { Container, Typography, Box, Grid, IconButton, InputBase, List, ListItem, ListItemText, ListItemIcon, Select, MenuItem, FormControl, InputLabel } from '@mui/material';
+import { FavoriteBorder, PersonOutline, ShoppingCart } from '@mui/icons-material';
+
 const images = [
-    'https://images.pexels.com/photos/52518/jeans-pants-blue-shop-52518.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-    '../images/jeans.jpg',
-    '../images/jeans.jpg',
+    'clothes/sweater.jpg',
+    'clothes/Tie.jpg',
+    'clothes/dressShoes.jpg',
   ];
-  
+
+
 export const IndexPage = (props) => (
-  
   <div className="HomePage">
       <Head title='Home'/>
       <header className="HomePage-header">
-        <nav class= 'flex-container'>
-          <div class= 'nav-item'> About us </div>
-          <div class= 'nav-item'> Our Shop </div>
-          <div class= 'nav-item'> <Link href="/aboutMe">
-    <Button
-    variant="contained"
-    color="primary"
-    style={{ position: 'absolute', top: 10, right: 10,backgroundColor: '#6e3c19'}}> aboutme</Button></Link>
-     </div>
-        </nav>
+      <Box display="flex" justifyContent="space-between" alignItems="center" py={2} borderBottom={1} borderColor="brown.500">
+        <Box display="flex" alignItems="center">
+          
+          {/* Second Chance Logo Image */}
+          <img src="/BrownLogo.png" alt="Logo" style={{ height: '70px' }} />
+        </Box>
+        <Box display="flex" alignItems="center">
+          <Link href="/shop" passHref>
+            <Typography class='nav-item' variant="body1" component="a" style={{ color: '#6E3C19', margin: '0 16px',}}>SHOP</Typography>
+          </Link>
+          <Link href="/sell" passHref>
+            <Typography class='nav-item'variant="body1" component="a" style={{ color: '#6E3C19', margin: '0 16px' }}>SELL</Typography>
+          </Link>
+          <Link href="/aboutMe" passHref>
+            <Typography class='nav-item'variant="body1" component="a" style={{ color: '#6E3C19', margin: '0 16px' }}>ABOUT US</Typography>
+          </Link>
+        </Box>
+        
+        <Box display="flex" alignItems="center">
+          <InputBase placeholder="Search" style={{ margin: '0 16px', border: '1px solid beige', padding: '4px' }} />
+          <IconButton style={{ color: '#8A9A5B' }}><FavoriteBorder /></IconButton>
+          <IconButton style={{ color: '#8A9A5B' }}><PersonOutline /></IconButton>
+          <IconButton style={{ color: '#8A9A5B' }}><ShoppingCart /></IconButton>
+        </Box>
+      </Box>
+        
       </header>
       <main>
         <section id='Intro'>
           <div class='flex-container'>
-            <h1 class='intro-part' id= 'Big-text'>Second Chance Styles</h1>
+          <img src="/secondChance.png" alt="Logo" style={{ height: '340px', padding: 20,}} />
             <p class='intro-part second'> Welcome to our college student-run thrift store! Discover an eclectic blend of pre-loved treasures 
               curated by our savvy team of students. From vintage fashion finds to quirky home decor and everything in between, each item tells a unique story waiting to continue with you. 
-              Dive into sustainable shopping with style and support our community-driven mission. HHomePagey hunting!
+              Dive into sustainable shopping with style and support our community-driven mission. Happy hunting!
               </p>
           </div>
         </section>
         <section>
         <div className="HomePage">
-      <h1>Image Carousel</h1>
+      <h1 class='featured'>Featured Today!</h1>
       <Carousel images={images} />
     </div>
         </section>
@@ -66,10 +84,6 @@ export const IndexPage = (props) => (
               <button>Add to Cart</button>
             </div>
           </div>
-        </section>
-        <section className="about-us">
-          <h2>About Us</h2>
-          <p>Welcome to SecondChance, where you can find a wide range of pre-loved items at affordable prices. Browse our collection and discover treasures!</p>
         </section>
       </main>
       <footer>
