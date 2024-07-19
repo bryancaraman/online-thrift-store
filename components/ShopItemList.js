@@ -24,6 +24,9 @@ function ShopItemList() {
     }, []);
 
     const handleAddToCart = async (product) => {
+        if (product.sale_price !== undefined) {
+            product.price = product.sale_price;
+        }
         /* fetch current cart items */
         const response = await fetch(ADD_TO_CART_URL, { method: 'GET'});
         const cartItems = await response.json();

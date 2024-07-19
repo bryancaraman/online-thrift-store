@@ -3,16 +3,13 @@ import { Grid, CardContent, Typography, Button, FormControl, FormLabel, RadioGro
 import { useRouter } from 'next/router'
 import CartItem from "./CartItem";
 
-
 function CartItemList() {
-    const CART_URL = "http://localhost:8000/v1/cartitems"
+    const CART_URL = "http://localhost:8000/v1/cartitems";
 
     // this is the state we will use to hold the response from the api
     const [items, setItems] = useState([]);
 
-    const total = items
-    .map(item => item.quantity * item.price)
-    .reduce((nextValue, total) => nextValue + total, 0);
+    const total = items.map(item => item.quantity * item.price).reduce((nextValue, total) => nextValue + total, 0);
     const tax = Number((total * .08625).toFixed(2));
     const shippingAndHandling = total > 25 ? 0 : 4.99;
     const total_price = total + tax + shippingAndHandling;
@@ -35,7 +32,7 @@ function CartItemList() {
                 if (response.ok) {
                     if (items.length > 0) {
                         const updatedItems = items.filter(item => item.id != product_id);
-                        setItems({ items: updatedItems })
+                        setItems(updatedItems);
                     }
                 }
                 else {
@@ -76,7 +73,6 @@ function CartItemList() {
                 return null;
         }
     };
-
 
     return (
         <div className="container">

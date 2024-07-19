@@ -13,7 +13,6 @@ const images = [
     'clothes/dressShoes.jpg',
   ];
 
-
 export const IndexPage = (props) => (
   <div className="HomePage">
       <Head title='Home'/>
@@ -52,7 +51,6 @@ export const IndexPage = (props) => (
         <section id='Intro'>
           <div class='flex-container'>
           <img src="/secondChance.png" alt="Logo" style={{ height: '340px', padding: 50,}} />
-            
             <p class='intro-part second'> Welcome to our college student-run thrift store! Discover an eclectic blend of pre-loved treasures 
               curated by our savvy team of students. From vintage fashion finds to quirky home decor and everything in between, each item tells a unique story waiting to continue with you. 
               Dive into sustainable shopping with style and support our community-driven mission. Happy hunting!
@@ -66,26 +64,26 @@ export const IndexPage = (props) => (
     </div>
         </section>
         <section className="featured-items">
-          <h2>Some items</h2>
+          <h2 class='featured'>New Releases!</h2>
           <div className="item-list">
             {/* Placeholder for featured items */}
             <div className="item-card">
-              <img src="https://via.placeholder.com/150" alt="Item" />
-              <h3>Item Name</h3>
-              <p>Description of the item...</p>
-              <button>Add to Cart</button>
+              <img src="https://i5.walmartimages.com/seo/Halo-Infinite-Men-s-Big-Men-s-Master-Chief-Helmet-T-Shirt-Size-S-3XL_c7b94de6-ec36-4f84-a058-028c0572ce5a.e358df6b8ad727b64cbd7a617ffde4d6.jpeg?odnHeight=768&odnWidth=768&odnBg=FFFFFF" alt="Item" />
+              <h3>Graphic T-Shirt</h3>
+              <p>Graphic T-Shirt with a picture of Master Chief</p>
+              <button className='caroButton'>Add to Cart</button>
             </div>
             <div className="item-card">
-              <img src="https://via.placeholder.com/150" alt="Item" />
-              <h3>Item Name</h3>
-              <p>Description of the item...</p>
-              <button>Add to Cart</button>
+              <img src="https://www.lenversfashion.com/cdn/shop/files/AGNESLIGHTPINKMOHAIRMERINOWOOL_7_x800.jpg?v=1708100344" alt="Item" />
+              <h3>Sweater</h3>
+              <p>Wool sweater for the winter</p>
+              <button className='caroButton'>Add to Cart</button>
             </div>
             <div className="item-card">
-              <img src="https://via.placeholder.com/150" alt="Item" />
-              <h3>Item Name</h3>
-              <p>Description of the item...</p>
-              <button>Add to Cart</button>
+              <img src="https://images.asos-media.com/products/collusion-relaxed-sweatpants-in-light-blue/205997561-1-blue?$n_640w$&wid=513&fit=constrain" alt="Item" />
+              <h3>Sweatpants</h3>
+              <p>Light blue cotton sweatpants</p>
+              <button className='caroButton'>Add to Cart</button>
             </div>
           </div>
         </section>

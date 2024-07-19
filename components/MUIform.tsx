@@ -33,17 +33,16 @@ const Selling = () => {
                 image_url : "",
                 is_on_sale : false ,
                 sale_price :0.0
-
             }
         })
         const {register, handleSubmit, formState ,control } = form
         const {errors} = formState
-        const onSubmit = (data : FormValues) =>{
+        const onSubmit = (data : FormValues) => {
             handleAddToShop(data)
         }
         //adding to api 
-        const router = useRouter()
-        const PRODUCTS_URL = "http://localhost:8000/v1/products"
+        const router = useRouter();
+        const PRODUCTS_URL = "http://localhost:8000/v1/products";
         const handleAddToShop = async (product) => {
             /* fetch current cart items */
             const response = await fetch(PRODUCTS_URL, { method: 'GET'});
@@ -64,11 +63,10 @@ const Selling = () => {
         }
 
     return (
-        <Container className='sell-page'>
-            <header className="sell-page">
-                <Box display="flex" justifyContent="space-between" alignItems="center" py={2} borderBottom={1} borderColor="brown.500" background-color="blue">
+        <Container>
+            <header>
+                <Box display="flex" justifyContent="space-between" alignItems="center" py={2} borderBottom={1} borderColor="brown.500">
                     <Box display="flex" alignItems="center">
-                    
                         {/* Second Chance Logo Image */}
                         <Link legacyBehavior href="/">
                             <img src="/BrownLogo.png" alt="Logo" style={{ height: '50px' }} />
