@@ -21,7 +21,7 @@ function CartItem({ product_id, name, image_url, price, quantity, onRemoveFromCa
                 <Typography variant="h6">Price: ${price}</Typography>
             </CardContent>
             <CardActions>
-                <Button onClick={removeFromCart} color="primary">Remove from cart</Button>
+                <Button className='caroButton' onClick={removeFromCart} color="primary">Remove from cart</Button>
             </CardActions>
         </Card>
     );

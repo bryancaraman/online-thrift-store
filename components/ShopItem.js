@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, Button, CardContent, CardMedia, CardActions, Typography } from '@mui/material';
+import { Card, Button, CardContent, CardMedia, CardActions, Typography, Container } from '@mui/material';
 
 function ShopItem({ product_id, name, description, image_url, price, is_on_sale, sale_price, onAddToCart}) {
     const addToCart = () => {
@@ -31,6 +31,7 @@ function ShopItem({ product_id, name, description, image_url, price, is_on_sale,
     }
 
     return (
+        <div className="shop-item">
         <Card style={{height: "500px"}}>
             <CardMedia
                 sx={{ height: "290px"}}
@@ -42,10 +43,11 @@ function ShopItem({ product_id, name, description, image_url, price, is_on_sale,
                 <Typography variant="h7">{description}</Typography>
                 <Typography variant="h6">{checkOnSale()}</Typography>
             </CardContent>
-            <CardActions>
-                <Button className='flex-button' variant="text" color="primary" onClick={addToCart}>Add To Cart</Button>
-            </CardActions>
         </Card>
+        <Container>
+                <Button className="flex-button" variant="text" color="primary" onClick={addToCart}>Add To Cart</Button>
+        </Container>
+        </div>
     );
 }
 

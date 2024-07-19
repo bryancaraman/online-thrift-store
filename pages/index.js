@@ -14,7 +14,7 @@ const images = [
   ];
 
 export const IndexPage = (props) => (
-  <div className="HomePage">
+  <div>
       <Head title='Home'/>
       <header className='HomePage-header'>
         <Box display="flex" justifyContent="space-between" alignItems="center" py={1} borderBottom={1} borderColor="brown.500">
@@ -64,7 +64,7 @@ export const IndexPage = (props) => (
     </div>
         </section>
         <section className="featured-items">
-          <h2 class='featured'>New Releases!</h2>
+          <h2 class='featured' className='new-releases'>New Releases!</h2>
           <div className="item-list">
             {/* Placeholder for featured items */}
             <div className="item-card">
@@ -89,7 +89,9 @@ export const IndexPage = (props) => (
         </section>
       </main>
       <footer>
+        <div className='footer'>
         <p>&copy; 2024 SecondChanceStyles. All rights reserved.</p>
+        </div>
       </footer>
     </div>
 );

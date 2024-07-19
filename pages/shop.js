@@ -33,8 +33,7 @@ const ShopPage = () => {
     setMaterial(event.target.value);
   };
   return (
-    
-    <Container>
+    <div>
       <Head title='Welcome to the Shop!' />
       
       {/* Search Bar */}
@@ -68,6 +67,8 @@ const ShopPage = () => {
     
         </Box>
       </header>
+
+      <Container maxWidth='xl'>
       
       {/* Filters and Product Grid */}
       <Box display="flex" mt={5}>
@@ -125,7 +126,8 @@ const ShopPage = () => {
        <ShopItemList/>
         
       </Box>
-    </Container>
+      </Container>
+    </div>
   );
 };
 

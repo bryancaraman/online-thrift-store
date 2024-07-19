@@ -8,13 +8,10 @@ import Link from '@mui/material';
 
 
 export const sellingPage = () => (
-  
-  <container className="sell-page">
+  <div>
     <Head title='Sell'/>
-    <div>
-      <Selling/>
-    </div>
-  </container>
+    <Selling/>
+  </div>
 );
 
 export default sellingPage

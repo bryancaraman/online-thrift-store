@@ -56,14 +56,14 @@ const AMphotos = () => {
         </Box>
       </header>
 
-      <h1> <center>Welcome to our team</center> </h1>
+      <h1> <center>Welcome to our team!</center> </h1>
 
         <Typography variant="body1" color="green" align="center" padding={1}>We are a dynamic team of intern boot campers at GoDaddy, driven by our passion for sustainable solutions. Tasked with applying our training in APIs, Python, HTML, and CSS, and more we have crafted a captivating storefront and seamless shopping cart experience. 
             Inspired by GoDaddy's commitment to sustainability, we take pride in creating a website that resonate with our values and yours. Explore our site and join us in 
             embracing a more sustainable future through thoughtful consumption!
         </Typography>
 
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '75vh' }}>
+        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '75vh', padding:'45px'}}>
         <Card sx={{ maxWidth: 500 }} elevation={3} >
             <CardHeader title= {names[x] }align="center" />
             <CardMedia
@@ -76,8 +76,8 @@ const AMphotos = () => {
                 <Typography variant="body2" color="green" align="center">{descriptions[x]}</Typography>
             </CardContent>
             <CardActions>
-                <div className='flex-button'>
-                    <Button className='about-button' onClick={change_person}> Next team member!</Button>
+                <div className='about-container'>
+                    <Button className='about-button' padding-left='200px' onClick={change_person}> Next team member!</Button>
                 </div>
             </CardActions>
         </Card>

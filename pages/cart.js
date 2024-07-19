@@ -8,7 +8,6 @@ import { FavoriteBorder, PersonOutline, ShoppingCart } from '@mui/icons-material
 
 
 export const CartPage = (props) => (
-    <Container>
       <div>
         <Head title='Cart' />
         <header className='HomePage-header'>
@@ -41,9 +40,10 @@ export const CartPage = (props) => (
       
           </Box>
         </header>
+        <Container>
         <CartItemList />
+        </Container>
       </div>
-    </Container>
   );
   
   export default CartPage;

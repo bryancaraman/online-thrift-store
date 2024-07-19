@@ -63,8 +63,8 @@ const Selling = () => {
         }
 
     return (
-        <Container>
-            <header>
+        <div>
+            <header className='HomePage-header'>
                 <Box display="flex" justifyContent="space-between" alignItems="center" py={2} borderBottom={1} borderColor="brown.500">
                     <Box display="flex" alignItems="center">
                         {/* Second Chance Logo Image */}
@@ -94,6 +94,8 @@ const Selling = () => {
                     </Box>
                 </Box>
             </header>
+            <div className='sell-form'>
+            <Container>
 
             <h1> <center>Sell your clothes here! </center> </h1>
             <h2 color="green"> <center> Please enter the details of your clothes so we can sell them! </center> </h2>
@@ -113,13 +115,15 @@ const Selling = () => {
             <TextField label = "Sale_price" type = "sale_price" {...register("sale_price", {required: 'this field  is required '})} error={!!errors.sale_price} helperText = {errors.sale_price?.message}/>
            
             </Stack>
-            <Button type = "submit" color = "primary"> submit </Button>
+            <Button className='caroButton' type = "submit" color = "primary"> submit </Button>
             </center>
             </form>
             <DevTool control ={control}/>
 
 
-        </Container>
+            </Container>
+            </div>
+        </div>
     );
 };
 

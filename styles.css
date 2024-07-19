@@ -271,8 +271,43 @@ footer {
 }
 
 .flex-button {
+    position: relative;
     width: 200px;
-    margin: 0 auto;
+    margin-left: 20px;
+    margin-top: -50px;
     display: flex;
     justify-content: center;
+    border-radius: 8px;
+    box-shadow: 0 2px 3px 0 rgba(0,0,0,.2);
+    background-color: #f2ebe2;
+    border-style: none;
+}
+
+.sell-form {
+  padding-bottom: 50px;
+}
+
+.new-releases {
+    display: flex;
+    justify-content: center; 
+}
+
+.shop-item {
+  padding-bottom: 30px;
+}
+
+.about-button {
+  border-radius: 8px;
+  box-shadow: 0 2px 3px 0 rgba(0,0,0,.2);
+  background-color: #f2ebe2;
+  border-style: none;
+}
+
+.about-container {
+  padding-left: 160px;
+  padding-bottom: 20px;
+}
+
+.footer {
+  padding-left: 575px;
 }
